@@ -1,0 +1,9 @@
+<h1> {{user.username}}</h1>
+
+{%for post in posts %}
+<ul>
+	<li>{{post.title}}</li>
+</ul>
+{%endfor%}
+<h5><a href="{% url 'logout' %}"> Log Out</a> </h5>
+<h5><a href="{% url 'home' %}">Home Page</a> </h5>

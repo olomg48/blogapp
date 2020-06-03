@@ -1,0 +1,16 @@
+<h1>{{user.username}}</h1>
+
+{% for post in posts %}
+<ul>
+	<li><a href="/{{post.id}}">{{post.title}}</a></li>
+</ul>
+{%endfor%}
+
+{% if user.is_authenticated %}
+<h3><a href="{% url 'profile'%}">Profile</a></h3>
+<h5><a href="{% url 'logout' %}"> Logout</a> </h5>
+<h5><a href="{% url 'posting' %}"> New Post</a> </h5>
+{% else %}
+<h5><a href="{% url 'login' %}"> Login</a> </h5>
+<h5><a href="{% url 'register'%}"> Register </a></h5>
+{% endif %}
