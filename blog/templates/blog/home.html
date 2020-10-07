@@ -1,6 +1,7 @@
 <h1>{{user.username}}</h1>
-
 {% for post in posts %}
+
+
 <ul>
 	<li><a href="/{{post.id}}">{{post.title}}</a></li>
 </ul>
@@ -14,3 +15,18 @@
 <h5><a href="{% url 'login' %}"> Login</a> </h5>
 <h5><a href="{% url 'register'%}"> Register </a></h5>
 {% endif %}
+
+
+{%if page_obj.number != 1 %}
+	<a href="?page=1">First Page</a>
+{%endif%}
+
+{% if page_obj.has_previous%}
+	<br>
+	<a href="?page={{page_obj.previous_page_number}}">Previous Page</a>
+{%endif%}
+
+{% if page_obj.has_next%}
+	<br>
+	<a href="?page={{page_obj.next_page_number}}">Next Page</a>
+{%endif%}

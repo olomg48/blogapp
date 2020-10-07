@@ -1,4 +1,12 @@
-{{post.author}}
-{{post.date_posted}}
-{{post.title}}
-{{post.content}}
+<ul>
+<li>Author: {{post.author}}</li>
+<li>Posted: {{post.date_posted}}</li>
+<li>Title: {{post.title}}</li>
+<li>{{post.content}}</li>
+{% if user.is_authenticated %}
+	{% if user == post.author %}
+	<li><a href="/update/{{post.id}}/"> Update post </a></li>
+	<li><a href="/delete/{{post.id}}/"> Delete post </a></li>
+	{%endif%}
+{%endif%}
+</ul>

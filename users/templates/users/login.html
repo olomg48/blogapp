@@ -2,10 +2,8 @@
 
 <form method="POST">
 	{% csrf_token %}
-	<fieldset>
 		{{form.as_p}}
-	</fieldset>
-	<button type="submit"> Sign Up </button>
+	<button type="submit"> Login </button>
 </form>
 
 <small><a href="{% url 'home' %}">home</a></small>

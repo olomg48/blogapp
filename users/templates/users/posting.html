@@ -1,7 +1,5 @@
 <form method="POST">
 	{% csrf_token%}
-	<fieldset>
-		{{form.as_p}}
-	</fieldset>
+	{{form.as_p}}
 	<button type="submit">Post</button>
 </form>
